@@ -1,0 +1,1 @@
+A bunch of projects made for practicing Python skills.
