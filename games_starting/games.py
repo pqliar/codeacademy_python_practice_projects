@@ -39,6 +39,28 @@ def cho_han(prediction, bet):
     print("Unlucky, you have guessed wrong, you have unfortunately lost $" + str(bet) + ", better luck next time!")
   return money
 
+def highest_card(bet):
+  deck = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12]
+
+  player_one_money = 100
+
+  draw_cards = []
+
+  player_one_pick = deck.pop(random.randint(1, len(deck)))
+  player_two_pick = deck.pop(random.randint(1, len(deck)))
+
+  draw_cards.append(player_one_pick)
+  draw_cards.append(player_two_pick)
+
+  if player_one_pick > player_two_pick:
+    player_one_money += bet * 2
+  elif player_two_pick > player_one_pick:
+    player_one_money = player_one_money - bet 
+  else:
+    return 0
+
+  return player_one_money
+
 
 
 
